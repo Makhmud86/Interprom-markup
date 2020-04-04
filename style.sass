@@ -1,0 +1,228 @@
+$orange: #fc7c08
+*
+  box-sizing: border-box
+  padding: 0
+  margin: 0
+  font-family: "SF UI Display"
+html
+  font-size: 10px
+.section
+  background-size: cover
+  //padding-top: 35vh 0 0 0 !important
+  //min-height: 100vh
+  //width: 100%
+  .fp-tableCell
+   // display: block 
+  &1
+    background-image: url(../img/screen1-bg.png)
+    background-position: right
+  &2
+    background-image: url(../img/screen2-bg.png)    
+  &3
+    background-image: url(../img/screen3-bg.png)
+  &4
+    background-image: url(../img/screen4-bg.png)
+.header
+  display: flex
+  justify-content: space-between
+  align-items: flex-start
+  position: absolute
+  top: 5%
+  left: 7%
+  width: 90%
+  min-height: 12vh
+  &-logo 
+  &-phone
+    &__number
+      color: $orange
+      font-size: 2rem
+      font-weight: 700
+    &__link      
+      text-align: right
+      margin-top: 5px
+      & a
+        color: #ffffff
+        font-size: 16px
+        font-weight: 400
+        border-bottom: 1px dotted #ffffff      
+        text-decoration: none
+        &:hover
+          border: none  
+  &-mobmenu
+    display: none
+.navbar
+  list-style: none
+  &-link
+    color: #ffffff
+    font-size: 18px
+    font-weight: 700
+    line-height: 24px
+    text-decoration: none
+    &:hover
+      color: $orange
+  & li 
+    display: inline
+    margin-left: 30px
+.main
+  display: flex
+  margin-left: 7%
+  //margin-top: 35vh
+  &-description
+    max-width: 600px
+    color: white
+    margin: 5rem 0
+    font-size: 16px
+    font-weight: 400
+    line-height: 28px
+  h1 
+    max-width: 850px
+    text-shadow: 0 0 22px rgba(0, 0, 0, 0.2)
+    color: #ffffff
+    font-size: 48px
+    font-weight: 500
+    text-transform: uppercase
+    margin-bottom: 0px
+.mainbtn
+  width: 270px
+  height: 58px
+  box-shadow: 0 0 9px 1px rgba(0, 0, 0, 0.56)
+  border-radius: 3px
+  border: none
+  background-color: $orange
+  color: white
+  font-size: 18px
+  font-weight: 700
+  line-height: 100%
+  &:active, &:focus
+    outline: none
+  &:hover
+    filter: brightness(95%)
+    cursor: pointer
+.descriptor
+  writing-mode: vertical-rl
+  transform: rotate(180deg)
+  position: fixed
+  min-height: 100vh
+  text-align: center
+  top: 0
+  left: 0
+  margin-left: 1%
+  color: #ffffff
+  font-size: 14px
+  font-weight: 500
+  line-height: 26px
+  text-transform: uppercase
+  letter-spacing: 2.1px
+  opacity: 0.7
+.bottom
+  position: absolute
+  bottom: 0
+  left: 0
+  width: 100%
+  height: 7vh
+  padding: 0 7%
+  &-wrapin
+    display: flex !important
+    justify-content: space-between
+    align-items: center
+  &__social img
+    margin-right: 19px
+  &__email a
+    color: white
+    border-bottom: 1px solid $orange
+    text-decoration: none
+    font-size: 1.6rem
+// FullPage styling
+#fp-nav
+  ul::before
+    content: ''
+    position: absolute
+    top: -140px
+    right: 23px
+    margin: 0 auto
+    width: 1px
+    height: 127px
+    background: #e3e3e3
+  ul::after
+    content: ''
+    position: absolute
+    top: 210px
+    right: 23px
+    margin: 0 auto
+    width: 1px
+    height: 127px
+    background: #e3e3e3
+  li
+    margin: 27px 20px 0px 0px !important
+  span, span:hover
+    background-color: #ffffff !important
+    opacity: 0.5
+    height: 8px !important
+    width: 8px !important
+    margin: 0 !important
+  >ul>li>a.active span
+    background-color: $orange !important
+    opacity: 1
+// mobile 
+
+/* Small (sm) */
+@media (max-width: 640px)
+  .descriptor
+    display: none
+  .fp-right
+    display: none
+  .header
+    top: 2%
+    nav
+      order: 1
+    .navbar
+      position: fixed
+      height: 100vh
+      width: 100%
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      align-items: center
+      background-color: #2b2b2b
+      left: 0
+      z-index: 0
+      margin-left: 0
+      li
+        margin-bottom: 3vh
+        a 
+          color: $orange
+      li:nth-child(1)
+        margin-top: 15vh
+    &-logo
+      z-index: 2
+      img
+        width: 81px
+    &-phone
+      z-index: 1
+      &__number
+        font-size: 1.8rem
+        text-align: center
+      &__link
+        font-size: 1.4rem !important
+        margin-top: 3px
+        text-align: center
+    &-mobmenu
+      display: block
+      margin-right: 20px
+      span
+        width: 25px
+        height: 2px
+        background-color: #fff
+        display: block
+        margin-top: 6px
+  .navbar.open
+    top: 0px
+  .navbar.close
+    top: -100%
+  .main
+    margin-right: 7%
+    text-align: center
+    h1
+      font-size: 6vw
+  .bottom
+    display: none
